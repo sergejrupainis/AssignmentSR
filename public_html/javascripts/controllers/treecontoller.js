@@ -10,9 +10,9 @@ var TreeController = TreeController ||
     
     init: function()
     {
-        App.mediator.subscribe( 'addChildNode', this.addChildNode);
-        App.mediator.subscribe( 'editNode', this.editNode);
-        App.mediator.subscribe( 'deleteNode', this.deleteNode);
+        GlobalMediator.subscribe( 'addChildNode', this.addChildNode);
+        GlobalMediator.subscribe( 'editNode', this.editNode);
+        GlobalMediator.subscribe( 'deleteNode', this.deleteNode);
         
         this.refreshTree();
     },
@@ -61,7 +61,6 @@ var TreeController = TreeController ||
         
         var treeNode = TreeController.findNodeById(TreeController.treeData, node.id);
         
-        
     },
     
     ///
@@ -87,6 +86,6 @@ var TreeController = TreeController ||
     
     refreshTree: function()
     {
-        App.mediator.publish('refreshTree', TreeController.treeData);
+        GlobalMediator.publish('refreshTree', TreeController.treeData);
     }
 };

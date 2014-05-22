@@ -11,8 +11,7 @@ var App = App ||
             $editNodeBtn: $('#editNodeBtn'),
             $deleteNodeBtn: $('#deleteNodeBtn')
         };
-        App.mediator = new Mediator();
-        
+
         this.items.$addChildNodeBtn.click(this.onAddChildNodeClick);
         this.items.$editNodeBtn.click(this.onEditNodeClick);
         this.items.$deleteNodeBtn.click(this.onDeleteNodeClick);
@@ -22,7 +21,7 @@ var App = App ||
         }
         this.items.$tree.treeview(options);
         
-        App.mediator.subscribe( 'refreshTree', this.refreshTree);
+        GlobalMediator.subscribe( 'refreshTree', this.refreshTree);
 
         TreeController.init();
     },
@@ -41,16 +40,16 @@ var App = App ||
     
     onAddChildNodeClick: function()
     {
-        App.mediator.publish('addChildNode', App.selectedNode, App.items.$nodeText.val());
+        GlobalMediator.publish('addChildNode', App.selectedNode, App.items.$nodeText.val());
     },
     
     onEditNodeClick: function()
     {
-        App.mediator.publish('editNode', App.selectedNode, App.items.$nodeText.val());
+        GlobalMediator.publish('editNode', App.selectedNode, App.items.$nodeText.val());
     },
     
     onDeleteNodeClick: function()
     {
-        App.mediator.publish('deleteNode', App.selectedNode);
+        GlobalMediator.publish('deleteNode', App.selectedNode);
     }
 };
