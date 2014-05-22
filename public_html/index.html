@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment (Sergejs Rupainis)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <h1>Assignment (Sergejs Rupainis)</h1>
+        <input id="nodeText" type="text"/>
+        <button id="addChildNodeBtn">Add node</button>
+        <button id="editNodeBtn">Edit node</button>
+        <button id="deleteNodeBtn">Delete node</button>
+        <br/><br/>
+        
+        <div id="tree"></div>
+        
+        <button id="saveStateBtn">Save state</button>
+        <button id="restoreStateBtn">Restore state</button>
+
+        
+        <script src="javascripts/libraries/jquery-2.1.1.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="javascripts/libraries/bootstrap-treeview.js"></script>
+        <script src="javascripts/helpers/mediator.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script src="javascripts/controllers/treecontoller.js"></script>
+        <script>
+            App.init();
+        </script>
+    </body>
+</html>
