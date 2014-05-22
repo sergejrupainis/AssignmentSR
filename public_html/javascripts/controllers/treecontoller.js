@@ -57,8 +57,11 @@ var TreeController = TreeController ||
     
     deleteNode: function(node)
     {
-        console.log("deleteNode");
-        console.log(text);
+        if(node === null) return;
+        
+        var treeNode = TreeController.findNodeById(TreeController.treeData, node.id);
+        
+        
     },
     
     ///

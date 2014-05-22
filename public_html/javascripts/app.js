@@ -37,7 +37,6 @@ var App = App ||
     {
         App.selectedNode = node;
         App.items.$nodeText.val(node.text);
-        console.log(node);
     },
     
     onAddChildNodeClick: function()
